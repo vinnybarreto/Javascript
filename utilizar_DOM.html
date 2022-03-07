@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+        }
+        h1, h2, h3, li{
+            margin: 15px;
+        }
+        h1{
+            text-transform: uppercase;
+        }
+        h2{
+            color: indigo;
+        }
+        h3{
+            color: crimson;
+        }
+
+        .originais, .alt_1{
+            width: 300px;
+            height: auto;
+            padding: 0px 30px 30px;
+            margin: 30px;
+            text-align: justify;
+            border: solid 1px black;
+            
+        }
+        .container{
+            display: flex;
+        }
+
+        .originais h3, .alt_1 h3{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Acessando e manupulando o DOM</h1>
+    <h2>Seletores mais comuns</h2>
+    <ol>
+        <li>document.getElementsByTagName()[] - Seleciona um determinado elemento através do seu nome
+            <p>Exemplo: document.getElementsByTagName('p')[0] - Seleciona o primeiro parágrafo do documento <br>
+                document.getElementsByTagName('p')[1] - Seleciona o segundo parágrafo do documento</p>
+        </li>
+        <li>
+            document.getElementById('meu-item-id') - Seleciona um determinado elemento através do id
+        </li>
+        <li>
+            document.getElementsByName()[] - Seleciona um determinado elemento através do nome
+        </li>
+        <li>
+            document.getElementsByClassName('.todos-itens-class')[] - Seleciona um determinado elemento através do nome da classe
+        </li>
+    </Ol>
+    <h2>Seletor mais usado</h2>
+    <h3>document.querySelector</h3>
+    <ul>
+        <li>document.querySelector("tag") - Seleciona a tag passada como parâmetro</li>
+        <li>document.querySelector("#id") - Seleciona o id passado como parâmetro</li>
+        <li>document.querySelector(".class") - Seleciona a classe passado como parâmetro</li>
+    </ul>
+    <h3>document.querySelectorAll</h3>
+    <ul>
+        <li>document.querySelectorAll("tag") - Seleciona todas tags as passadas como parâmetro</li>
+        <li>document.querySelectorAll("#id") - Seleciona todas os ids passadas como parâmetro</li>
+        <li>document.querySelectorAll(".class") - Seleciona todas as classes passadas como parâmetro</li>
+    </ul>
+    <div class="container">
+        <div class="originais">
+            <h3>Conteúdo original do HTML</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam, labore exercitationem? Sequi, neque?</p>
+        </div>
+        <div class="alt_1">
+            <h3>Conteúdo alterado pelo JS</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam, labore exercitationem? Sequi, neque?</p>
+        </div>
+    </div>
+    <script>
+        var altera = document.querySelector('.alt_1')
+        altera.style.background = 'lightgray'
+        altera.innerText = 'Este conteúdo foi inserido pelo JavaScript'
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variváveis</title>
+</head>
+<body>
+    <h1>Está página demonstra variáveis tipo number, float e string</h1>
+</body>
+    <script>
+        var num1 = prompt('Digite um número qualquer:');
+        var num2 = prompt('Digite um número digite outro número:');
+        var result = num1 + num2;
+        document.writeln(`A soma dos números é <strong>${result}</strong>, correto?<br>`)
+        document.writeln(`Errado, mesmo quando inserimos somente números o JS por default entende o número como uma string, por isso apresenta o resultado <strong>${result}</strong>, ou seja, o JS concatena os números.<br>`)
+        var result_OK = Number(num1) + Number(num2);
+        document.writeln(`Contudo se utilizamos o comando Number(nome_variável) o JS converte a string para número e apresenta o resultado da soma que é <strong>${result_OK}</strong><br>`)
+
+        
+
+    </script>
+</html>
