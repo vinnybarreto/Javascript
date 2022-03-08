@@ -79,14 +79,22 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam, labore exercitationem? Sequi, neque?</p>
         </div>
         <div class="alt_1">
-            <h3>Conteúdo alterado pelo JS</h3>
+            <h3>Conteúdo original do HTML</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam, labore exercitationem? Sequi, neque?</p>
         </div>
     </div>
     <script>
-        var altera = document.querySelector('.alt_1')
-        altera.style.background = 'lightgray'
-        altera.innerText = 'Este conteúdo foi inserido pelo JavaScript'
+        var box_2 = document.querySelector('.alt_1');
+        var altera_tit = document.querySelector('.alt_1 h3');
+        var mantem_cont = document.querySelector('.alt_1 p');
+
+        box_2.style.background = 'lightgray';
+        box_2.style.border = '2px solid green';
+        altera_tit.style.color = 'purple';
+        altera_tit.innerHTML = 'Título alterado pelo JS com comando innerHTML';
+
+        var novo_cont = mantem_cont.innerText + '<strong><br>Conteúdo inserido pelo JS utilizando o innerText<strong>';
+        mantem_cont.innerHTML = novo_cont;
     </script>
 </body>
 </html>
