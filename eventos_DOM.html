@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos usando DOM</title>
     <style>
-        li{
+
+        li {
             margin-bottom: 10px;
         }
+        .container{
+            display: flex;
+        }
+        .box1, .box2, .box3, .box4{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            padding: 5%;
+            width: 150px;
+            vertical-align: middle;
+            text-align: center;
+            margin: 0px 15px;
+            color: #fff;
+            background-color: #000;
+        }
+
     </style>
+
 </head>
+
 <body>
     <h1>Acessando e manupulando o DOM - Eventos</h1>
     <h2>Os principais eventos JS que utilizamos no DOM são:</h2>
@@ -39,12 +58,81 @@
             mouseleave() - Evento acionado está TOTALMENTE FORA de um campo
         </li>
         <li>
-            mouseover() - Evento acionado quando um dispositivo ponteiro é movido para o elemento que esteja escutando ou para um de seus filhos.
+            mouseover() - Evento acionado quando um dispositivo ponteiro é movido para o elemento que esteja escutando
+            ou para um de seus filhos.
         </li>
         <li>
             select() - Evento acionado quando se seleciona um elemento
         </li>
     </Ol>
-    
+    <section class="container">
+        <div class="box1">
+            <p>Interaja!</p>
+        </div>
+        <div class="box2">
+            <p>Interaja!</p>
+        </div>
+        <div class="box3">
+            <p>Clique aqui</p>
+        </div>
+        <div class="box4">
+            <p>Dê um duplo click aqui</p>
+        </div>
+    </section>
+    <script>
+        var ent_sai = document.querySelector('.box1')
+        var mov_down = document.querySelector('.box2')
+        var clic = document.querySelector('.box3')
+        var click_dl = document.querySelector('.box4')
+
+        ent_sai.addEventListener('mouseenter', entrar)
+        ent_sai.addEventListener('mouseout', sair)
+
+        mov_down.addEventListener('mousemove', mover)
+        mov_down.addEventListener('mousedown', descer)
+        mov_down.addEventListener('mouseup', subir)
+
+        clic.addEventListener('click', clicar)
+        click_dl.addEventListener('dblclick', dl_click)
+
+        function entrar(){
+            ent_sai.style.background = '#F2E3D5';
+            ent_sai.style.color = '#012E40'
+            ent_sai.innerText = 'Evento mouseenter() Saia do quadrado';
+        }
+
+        function sair(){
+            ent_sai.style.background = '#012E40'
+            ent_sai.style.color = '#F2E3D5'
+            ent_sai.innerHTML = 'Evento mouseout()'
+        }
+
+
+        function mover(){
+            mov_down.innerHTML = 'Evento mousemove() Aperte o botão do mouse'
+        }
+        function descer(){
+            mov_down.style.color = '#610A26'
+            mov_down.style.background = '#FAE4CC'
+            mov_down.innerHTML = 'Evento mousedown() Solte o botão do mouse'
+        }
+        function subir(){
+            mov_down.style.color = '#FAE4CC'
+            mov_down.style.background = '#610A26'
+            mov_down.innerHTML = 'Evento mouseup()'
+        }
+
+        function clicar(){
+            clic.style.background = '#00342D'
+            clic.style.color = '#D9CE96'
+            clic.innerText = 'Evento click()'
+        }
+        function dl_click(){
+            click_dl.style.background = '#D9CE96'
+            click_dl.style.color = '#00342D'
+            click_dl.innerText = 'Evento dlbclick()'
+        }
+    </script>
 </body>
+
 </html>
