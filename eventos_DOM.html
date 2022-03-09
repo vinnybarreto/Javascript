@@ -7,15 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos usando DOM</title>
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 30px;
+        }
 
         li {
             margin-bottom: 10px;
         }
-        .container{
+
+        .container {
             display: flex;
+            justify-content: center;
+            margin: 45px 15px;
         }
-        .box1, .box2, .box3, .box4{
-            font-family: Arial, Helvetica, sans-serif;
+
+        p {
+            text-indent: 30px;
+            line-height: 30px;
+        }
+
+        strong {
+            color: red;
+        }
+
+        .btn{
+            text-decoration: none;
+            text-transform: uppercase;
+            margin-left: 15px;
+            padding: 8px;
+            background-color: #012E40 ;
+            color: #fff;
+            border-radius: 3px;
+        }
+
+        .box1,
+        .box2,
+        .box3,
+        .box4 {
             font-size: 1.5em;
             padding: 5%;
             width: 150px;
@@ -25,66 +54,108 @@
             color: #fff;
             background-color: #000;
         }
-
     </style>
 
 </head>
 
 <body>
-    <h1>Acessando e manupulando o DOM - Eventos</h1>
-    <h2>Os principais eventos JS que utilizamos no DOM são:</h2>
-    <ol>
-        <li>mouseenter() - Evento acionado quando o mouse entra em um campo
-        </li>
-        <li>
-            mouseout() - Evento acionado quando o mouse sai de um campo
-        </li>
-        <li>
-            mousemove() - Evento acionado quando o mouse se movimenta em um campo, por exemplo uma div
-        </li>
-        <li>
-            mousedown() - Evento acionado quando se aperta o mouse dentro de um campo
-        </li>
-        <li>
-            mouseup() - Evento acionado quando se solta o mouse dentro de um campo
-        </li>
-        <li>
-            click() - Evento acionado quando se clica o mouse dentro de um campo
-        </li>
-        <li>
-            dlbclick() - Evento acionado quando se clica 2 vezes o mouse dentro de um campo
-        </li>
-        <li>
-            mouseleave() - Evento acionado está TOTALMENTE FORA de um campo
-        </li>
-        <li>
-            mouseover() - Evento acionado quando um dispositivo ponteiro é movido para o elemento que esteja escutando
-            ou para um de seus filhos.
-        </li>
-        <li>
-            select() - Evento acionado quando se seleciona um elemento
-        </li>
-    </Ol>
+    <article>
+        <h1>Acessando e manupulando o DOM - Métodos Eventos e Funções</h1>
+        <h2>MÉTODOS</h2>
+        <p>Fazem a conexão entre o JS o HTML, o método precede a função e os eventos</p>
+        <h3>Os principais <strong>Métodos</strong> JS que utilizamos no DOM são:</h3>
+        <ol>
+            <li>addEventListener() - Espere algum evento para ser executado, monitora um evento
+                <p>Sintaxe: variavel.addEventListener('método/evento', nomeFunção);</p>
+            </li>
+            <li>createElement() - Cria uma tag/elemento no doc HTML
+                <p>Sintaxe: var variável = document.createElement('Nometag'); <a href="" class="btn">Exemplo</a></p>
+            </li>
+            <li>setAttribute() - Insere um atributo a variável criada
+                <p>Sintaxe: variavel.setAttribute('atributo', 'nomeAtributo');</p>
+            </li>
+            <li>appendChild() - Adiciona um elemento criado ao final do documento
+                <p>Sintaxe: variavel.appendChild(elemento);</p>
+            </li>
+        </ol>
+
+        <h2>FUNÇÕES</h2>
+        <p>Função é um conjunto de códigos que vão ser executadas SÓ QUANDO O EVENTO OCORRER, elas são executadas assim
+            que as CHAMADAS ou com a decorrência de um EVENTO. Uma função pode receber PARÂMETROS e retornar um
+            RESULTADO</p>
+            <ul>
+                <li>Sintaxe 1
+                    <p>function nomeAção() {</p>
+                    <p>BLOCO</p>
+                    <p>}</p>
+                </li>
+                <li>Sintaxe 2
+                    <p>function nomeAção(parâmetros) {</p>
+                    <p>BLOCO</p>
+                    <p>}</p>
+                </li>
+                <li> <p>nomeFunção(arg1, arg2) {</p>  <p>return arg1 + arg2 </p> <p>}</p> </li>
+            </ul>
+        <h2>EVENTOS</h2>
+        <h3>Os principais <strong>Eventos</strong> JS que utilizamos no DOM são:</h3>
+        <ol>
+            <li>mouseenter() - Evento acionado quando o mouse entra em um campo
+            </li>
+            <li>
+                mouseout() - Evento acionado quando o mouse sai de um campo
+            </li>
+            <li>
+                mousemove() - Evento acionado quando o mouse se movimenta em um campo, por exemplo uma div
+            </li>
+            <li>
+                mousedown() - Evento acionado quando se aperta o mouse dentro de um campo
+            </li>
+            <li>
+                mouseup() - Evento acionado quando se solta o mouse dentro de um campo
+            </li>
+            <li>
+                click() - Evento acionado quando se clica o mouse dentro de um campo
+            </li>
+            <li>
+                dlbclick() - Evento acionado quando se clica 2 vezes o mouse dentro de um campo
+            </li>
+            <li>
+                mouseleave() - Evento acionado está TOTALMENTE FORA de um campo
+            </li>
+            <li>
+                mouseover() - Evento acionado quando um dispositivo ponteiro é movido para o elemento que esteja
+                escutando ou para um de seus filhos.
+            </li>
+            <li>
+                select() - Evento acionado quando se seleciona um elemento
+            </li>
+        </Ol>
+    </article>
     <section class="container">
         <div class="box1">
-            <p>Interaja!</p>
+            <span>Interaja!</span>
         </div>
         <div class="box2">
-            <p>Interaja!</p>
+            <span>Interaja!</span>
         </div>
         <div class="box3">
-            <p>Clique aqui</p>
+            <span>Clique aqui</span>
         </div>
         <div class="box4">
-            <p>Dê um duplo click aqui</p>
+            <span>Dê um duplo click aqui</span>
         </div>
     </section>
     <script>
+
+        /*--Boxes de teste das funções--*/
+
+        //Criação das variáveis macro
         var ent_sai = document.querySelector('.box1')
         var mov_down = document.querySelector('.box2')
         var clic = document.querySelector('.box3')
         var click_dl = document.querySelector('.box4')
 
+        //Chamada dos métodos e eventos
         ent_sai.addEventListener('mouseenter', entrar)
         ent_sai.addEventListener('mouseout', sair)
 
@@ -95,43 +166,47 @@
         clic.addEventListener('click', clicar)
         click_dl.addEventListener('dblclick', dl_click)
 
-        function entrar(){
+        //Criação das funções que vão executar os procedimentos
+        function entrar() {
             ent_sai.style.background = '#F2E3D5';
             ent_sai.style.color = '#012E40'
             ent_sai.innerText = 'Evento mouseenter() Saia do quadrado';
         }
 
-        function sair(){
+        function sair() {
             ent_sai.style.background = '#012E40'
             ent_sai.style.color = '#F2E3D5'
             ent_sai.innerHTML = 'Evento mouseout()'
         }
 
 
-        function mover(){
+        function mover() {
             mov_down.innerHTML = 'Evento mousemove() Aperte o botão do mouse'
         }
-        function descer(){
+        function descer() {
             mov_down.style.color = '#610A26'
             mov_down.style.background = '#FAE4CC'
             mov_down.innerHTML = 'Evento mousedown() Solte o botão do mouse'
         }
-        function subir(){
+        function subir() {
             mov_down.style.color = '#FAE4CC'
             mov_down.style.background = '#610A26'
             mov_down.innerHTML = 'Evento mouseup()'
         }
 
-        function clicar(){
+        function clicar() {
             clic.style.background = '#00342D'
             clic.style.color = '#D9CE96'
             clic.innerText = 'Evento click()'
         }
-        function dl_click(){
+        function dl_click() {
             click_dl.style.background = '#D9CE96'
             click_dl.style.color = '#00342D'
             click_dl.innerText = 'Evento dlbclick()'
         }
+
+        /*------*/
+
     </script>
 </body>
 
