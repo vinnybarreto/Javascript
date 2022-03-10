@@ -12,6 +12,12 @@
             padding: 0px;
             font-family: Arial, Helvetica, sans-serif;
         }
+        h1, .paragraf{
+            margin: 15px;
+        }
+        span{
+            color: tomato;
+        }
         .divhtml {
             width: 150px;
             height: auto;
@@ -25,6 +31,10 @@
 </head>
 
 <body>
+    <h1>createElement()</h1>
+    <p class="paragraf">A função <span>document.createElement()</span> aceita como parâmetro o nome da tag e retorna o elemento recém criado (mas ainda não inserido).</p>
+    <p class="paragraf">var elem = document.createElement("li");</p>
+    <p class="paragraf">Inserimos o elemento com a função <span>elemento_pai.appendChild()</span>, mas ainda precisamos criar um nó de texto para o elemento, caso contrário, estaremos inserindo apenas o elemento, sem texto. Para criar um nó de texto utilizamos a função <span>document.createTextNode()</span>.</p>
     <div class="divhtml">Está box foi criada usando HTML e CSS</div>
 </body>
 <script>
@@ -33,7 +43,7 @@
 
     function adcElemento(){
         var novaDiv = document.createElement("div"); //Cria a Tag div no HTML
-        var novoTexto = document.createTextNode("Componente inserido pelo createElement()"); //Cria um novo conteúdo para a div
+        var novoTexto = document.createTextNode("Componente inserido pelo createElement()"); //Cria um novo nó de conteúdo para a div
         novaDiv.style.color = 'navy'
         novaDiv.style.background = 'aqua'
         novaDiv.style.width = '150px'
@@ -41,7 +51,7 @@
         novaDiv.style.margin ='30px auto'
         novaDiv.style.padding = '2%'
         novaDiv.style.textAlign = 'center'
-        novaDiv.appendChild(novoTexto); 
+        novaDiv.appendChild(novoTexto); //Anexa nó ao texto
 
         var divAtual= document.querySelector(".divhtml");
         document.body.insertBefore(novaDiv,divAtual);

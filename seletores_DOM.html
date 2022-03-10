@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seletores DOM</title>
     <style>
-        *{
+        * {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0px;
         }
-        h1, h2, h3, li{
+
+        h1,
+        h2,
+        h3,
+        li {
             margin: 15px;
         }
-        h1{
+
+        h1 {
             text-transform: uppercase;
         }
-        h2{
+
+        h2 {
             color: indigo;
         }
-        h3{
+
+        h3 {
             color: crimson;
         }
 
-        .originais, .alt_1{
+        .originais,
+        .alt_1 {
             width: 300px;
             height: auto;
             padding: 0px 30px 30px;
             margin: 30px;
             text-align: justify;
             border: solid 1px black;
-            
+
         }
-        .container{
+
+        .container {
             display: flex;
         }
 
-        .originais h3, .alt_1 h3{
+        .originais h3,
+        .alt_1 h3 {
             text-align: center;
         }
-
     </style>
 </head>
+
 <body>
     <h1>Acessando e manupulando o DOM - Seletores</h1>
     <h2>Seletores mais comuns</h2>
@@ -57,7 +68,8 @@
             document.getElementsByName()[] - Seleciona um determinado elemento através do nome
         </li>
         <li>
-            document.getElementsByClassName('.todos-itens-class')[] - Seleciona um determinado elemento através do nome da classe
+            document.getElementsByClassName('.todos-itens-class')[] - Seleciona um determinado elemento através do nome
+            da classe
         </li>
     </Ol>
     <h2>Seletor mais usado</h2>
@@ -76,14 +88,27 @@
     <div class="container">
         <div class="originais">
             <h3>Conteúdo original do HTML</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam, labore exercitationem? Sequi, neque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae
+                consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam,
+                labore exercitationem? Sequi, neque?</p>
         </div>
         <div class="alt_1">
             <h3>Conteúdo original do HTML</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam, labore exercitationem? Sequi, neque?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae
+                consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam,
+                labore exercitationem? Sequi, neque?</p>
         </div>
     </div>
     <script>
+
+        var carctCont = document.getElementsByTagName('p');
+
+        //Verifica quantos parágrafos tem no corpo
+        for (var i = 0; i < carctCont.length; i++) {
+            console.log(carctCont[i])
+        }
+        console.log(carctCont[0])//Mostra somente o primeiro parágrafo do body
+
         var box_2 = document.querySelector('.alt_1');
         var altera_tit = document.querySelector('.alt_1 h3');
         var mantem_cont = document.querySelector('.alt_1 p');
@@ -97,4 +122,5 @@
         mantem_cont.innerHTML = novo_cont;
     </script>
 </body>
+
 </html>
