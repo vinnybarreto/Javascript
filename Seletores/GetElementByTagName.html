@@ -11,7 +11,7 @@
 <body>
     <h1>Título 1</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati excepturi sed distinctio corporis inventore nam doloribus dolor, totam maxime, deleniti error. Debitis dolores asperiores corporis perferendis veniam, quidem dicta facilis?</p>
-    <h2>Título 2</h2>
+    <h2 id="tit_2">Título 2</h2>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam accusantium ipsam, omnis, consectetur, dolores quaerat blanditiis commodi obcaecati quos maxime sunt nostrum sit id dolorem. Fugiat ducimus cumque recusandae ea?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, aut amet? Pariatur illo error sit fuga repellat aperiam illum voluptate necessitatibus quae, recusandae distinctio quod, impedit non repellendus molestiae maiores.</p>
     <h3>Título 3</h3>
@@ -20,17 +20,29 @@
 </body>
 <script>
     var carctCont = document.getElementsByTagName('p');
-    console.log(carctCont)
-
+    var getId = document.getElementById('tit_2');
     
+
+    /*--Comandos para o  document.getElementsByTagName()--*/
     //Compara a variável i com o parâmetro do elemento chamado pelo seletor
     for (var i = 0; i < carctCont.length; i++) {
-        carctCont[i].style.color = 'red'
+        carctCont[i].style.color = 'red' // Aplica o style em todas as tags p, pois passamos o elemento i
     }
 
-    /*console.log(carctCont.length)
-    var numPar = 'Este texto possui' + innerText.
-    carctCont.length*/
+
+    /*--Comandos para o document.getElementById()--*/
+    getId.style.background = 'purple'
+    getId.style.color = '#fff'
+    var new_text = ' Novo estilo e texto inserido pela JS'
+    getId.innerHTML = getId.innerText + new_text
+
+
+
+
+
+    console.log(carctCont);
+    console.log(getId);
+
 
 </script>
 

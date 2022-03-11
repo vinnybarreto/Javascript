@@ -85,51 +85,72 @@
         <li>document.querySelectorAll("#id") - Seleciona todas os ids passadas como parâmetro</li>
         <li>document.querySelectorAll(".class") - Seleciona todas as classes passadas como parâmetro</li>
     </ul>
-    <div class="container">
-        <div class="originais">
-            <h3>Conteúdo original do HTML</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae
-                consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam,
-                labore exercitationem? Sequi, neque?</p>
-        </div>
-        <div class="alt_1">
-            <h3>Conteúdo original do HTML</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae
-                consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam,
-                labore exercitationem? Sequi, neque?</p>
-        </div>
+
+    <h1>Título 1</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati excepturi sed distinctio corporis inventore
+        nam doloribus dolor, totam maxime, deleniti error. Debitis dolores asperiores corporis perferendis veniam,
+        quidem dicta facilis?</p>
+    <h2 id="tit_2">Título 2</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam accusantium ipsam, omnis, consectetur, dolores
+        quaerat blanditiis commodi obcaecati quos maxime sunt nostrum sit id dolorem. Fugiat ducimus cumque recusandae
+        ea?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, aut amet? Pariatur illo error sit fuga
+        repellat aperiam illum voluptate necessitatibus quae, recusandae distinctio quod, impedit non repellendus
+        molestiae maiores.</p>
+    <h3>Título 3</h3>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit deleniti laborum optio natus quos numquam dolor
+        placeat, tenetur possimus beatae distinctio magnam debitis neque. Iste rem itaque enim neque qui.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, sed. Veritatis doloremque perferendis magni.
+        Incidunt eaque ipsam nam molestiae quam? Quis repellendus at voluptates aut ea. Quo optio repudiandae
+        laboriosam?</p>
+
+</body>
+<div class="container">
+    <div class="originais">
+        <h3>Conteúdo original do HTML</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae
+            consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam,
+            labore exercitationem? Sequi, neque?</p>
     </div>
-    <script>
-        var carctCont = document.getElementsByTagName('p');
-
-        //Verifica quantos parágrafos tem no corpo
-        for (var i = 0; i < carctCont.length; i++) {
-            console.log(carctCont[i])
-        }
-        console.log(carctCont[0])//Mostra somente o primeiro parágrafo do body
-
-
-
-
+    <div class="alt_1">
+        <h3>Conteúdo original do HTML</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae
+            consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam,
+            labore exercitationem? Sequi, neque?</p>
+    </div>
+</div>
+<script>
+    var carctCont = document.getElementsByTagName('p');
+    var getId = document.getElementById('tit_2');
 
 
+    /*--Comandos para o  document.getElementsByTagName()--*/
+    //Compara a variável i com o parâmetro do elemento chamado pelo seletor
+    for (var i = 0; i < carctCont.length; i++) {
+        carctCont[i].style.color = 'red' // Aplica o style em todas as tags p, pois passamos o elemento i
+    }
 
 
 
 
 
-        var box_2 = document.querySelector('.alt_1');
-        var altera_tit = document.querySelector('.alt_1 h3');
-        var mantem_cont = document.querySelector('.alt_1 p');
 
-        box_2.style.background = 'lightgray';
-        box_2.style.border = '2px solid green';
-        altera_tit.style.color = 'purple';
-        altera_tit.innerHTML = 'Título alterado pelo JS com comando innerHTML';
 
-        var novo_cont = mantem_cont.innerText + '<strong><br>Conteúdo inserido pelo JS utilizando o innerText<strong>';
-        mantem_cont.innerHTML = novo_cont;
-    </script>
+
+
+
+    var box_2 = document.querySelector('.alt_1');
+    var altera_tit = document.querySelector('.alt_1 h3');
+    var mantem_cont = document.querySelector('.alt_1 p');
+
+    box_2.style.background = 'lightgray';
+    box_2.style.border = '2px solid green';
+    altera_tit.style.color = 'purple';
+    altera_tit.innerHTML = 'Título alterado pelo JS com comando innerHTML';
+
+    var novo_cont = mantem_cont.innerText + '<strong><br>Conteúdo inserido pelo JS utilizando o innerText<strong>';
+    mantem_cont.innerHTML = novo_cont;
+</script>
 </body>
 
 </html>
