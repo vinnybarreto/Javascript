@@ -31,7 +31,7 @@
             color: red;
         }
 
-        .btn{
+        #btn1, #btn2{
             text-decoration: none;
             text-transform: uppercase;
             margin-left: 15px;
@@ -69,10 +69,13 @@
                 <p>Sintaxe: variavel.addEventListener('método/evento', nomeFunção);</p>
             </li>
             <li>createElement() - Cria uma tag/elemento no doc HTML
-                <p>Sintaxe: var variável = document.createElement('Nometag'); <a href="" class="btn">Exemplo</a></p>
+                <p class="createElem">Sintaxe: var variável = document.createElement('Nometag'); <a href="" id="btn1">CLIQUE AQUI</a></p>
+            </li>
+            <li>getAttribute() - Insere um atributo a variável criada
+                <p class="getAtrib">Sintaxe: variavel.getAttribute('atributo', 'nomeAtributo'); <a href="">PASSE O MOUSE</a></p>
             </li>
             <li>setAttribute() - Insere um atributo a variável criada
-                <p>Sintaxe: variavel.setAttribute('atributo', 'nomeAtributo');</p>
+                <p>Sintaxe: variavel.setAttribute('atributo', 'nomeAtributo'); <a href="" id="btn2">PASSE O MOUSE</a></p>
             </li>
             <li>appendChild() - Adiciona um elemento criado ao final do documento
                 <p>Sintaxe: variavel.appendChild(elemento);</p>
@@ -146,6 +149,65 @@
         </div>
     </section>
     <script>
+
+        /*--Botão CLIQUE AQUI - Utilização do document.createElement()--*/
+        var exemp = document.querySelector('#btn1')
+        var elemPai = document.querySelector('.createElem')
+
+        exemp.addEventListener('mousedown', insElem)
+
+        function insElem(){
+            var newTag = document.createElement('p')//Criação da Tag p
+            elemPai.appendChild(newTag) // Insiro a Tag no elemento pai
+            var newTxt = document.createTextNode('Novo texto inserido pelo createElement()')//Cria o texto e insere no parágrafo
+            newTag.appendChild(newTxt) //Adiciona a tag com a ação feita do click
+        }
+        /*------*/
+
+
+
+
+
+
+
+        /*--Botão PASSE O MOUSE - Utilização do GetAttribute()--*/
+
+        var insAtrib = document.querySelector('.getAtrib a')
+        insAtrib.addEventListener('mouseenter', insereAtb)
+        insAtrib.addEventListener('mouseleave', retiraAtb)
+
+        function insereAtb(){
+            insAtrib.getAttribute('id')
+            insAtrib.setAttribute('id', 'btn2')
+            insAtrib.innerText = 'getAttribute'
+        }
+
+        function retiraAtb(){
+            insAtrib.removeAttribute('id')
+            insAtrib.innerText = 'REMOVEATTRIBUTE'
+        }
+
+        
+
+
+
+/*
+        insAtrib.addEventListener('mouseenter', altera)
+        insAtrib.addEventListener('mouseleave', retorna)
+
+        function altera(){
+            insAtrib.setAttribute('id','btn2')
+            insAtrib.innerText = 'Atributo ID inserido'
+        }
+
+        function altera(){
+            insAtrib.setAttribute('id','btn2')
+            insAtrib.innerText = 'Atributo ID inserido'
+        }*/
+
+
+        
+
 
         /*--Boxes de teste das funções--*/
 
