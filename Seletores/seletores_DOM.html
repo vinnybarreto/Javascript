@@ -86,18 +86,17 @@
         <li>document.querySelectorAll(".class") - Seleciona todas as classes passadas como parâmetro</li>
     </ul>
 
-    <h1>Título 1</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati excepturi sed distinctio corporis inventore
-        nam doloribus dolor, totam maxime, deleniti error. Debitis dolores asperiores corporis perferendis veniam,
-        quidem dicta facilis?</p>
-    <h2 id="tit_2">Título 2</h2>
+    <h1 id="tit_1">Título 1</h1>
+    <p>Os parágrafos originais foram escritos em letras preta, contudo sua cor foi alterada para vermelho usando o
+        seletor <strong>document.getElementsByTagName()</strong></p>
+    <h2 name="tit_2">Título 2</h2>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam accusantium ipsam, omnis, consectetur, dolores
         quaerat blanditiis commodi obcaecati quos maxime sunt nostrum sit id dolorem. Fugiat ducimus cumque recusandae
         ea?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, aut amet? Pariatur illo error sit fuga
         repellat aperiam illum voluptate necessitatibus quae, recusandae distinctio quod, impedit non repellendus
         molestiae maiores.</p>
-    <h3>Título 3</h3>
+    <h3 class="tit_3">Título 3 - Clique aqui</h3>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit deleniti laborum optio natus quos numquam dolor
         placeat, tenetur possimus beatae distinctio magnam debitis neque. Iste rem itaque enim neque qui.</p>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, sed. Veritatis doloremque perferendis magni.
@@ -121,35 +120,82 @@
 </div>
 <script>
     var carctCont = document.getElementsByTagName('p');
-    var getId = document.getElementById('tit_2');
-
-
-    /*--Comandos para o  document.getElementsByTagName()--*/
-    //Compara a variável i com o parâmetro do elemento chamado pelo seletor
-    for (var i = 0; i < carctCont.length; i++) {
-        carctCont[i].style.color = 'red' // Aplica o style em todas as tags p, pois passamos o elemento i
-    }
-
-
-
-
-
-
-
-
-
-
+    var getId = document.getElementById('tit_1');
+    var getName = document.getElementsByName('tit_2');
+    var getClass = document.getElementsByClassName('tit_3');
     var box_2 = document.querySelector('.alt_1');
     var altera_tit = document.querySelector('.alt_1 h3');
     var mantem_cont = document.querySelector('.alt_1 p');
+    var getClass = document.querySelector('.tit_3');
 
-    box_2.style.background = 'lightgray';
-    box_2.style.border = '2px solid green';
-    altera_tit.style.color = 'purple';
-    altera_tit.innerHTML = 'Título alterado pelo JS com comando innerHTML';
 
-    var novo_cont = mantem_cont.innerText + '<strong><br>Conteúdo inserido pelo JS utilizando o innerText<strong>';
-    mantem_cont.innerHTML = novo_cont;
+    /*--Comandos para o  document.getElementsByTagName()--*/
+    //Compara a variável i com o parâmetro do elemento chamado pelo seletor 
+    for (var i = 1; i < carctCont.length; i++) { //carctCont.length retorna a qtd de Tags 'p' no body
+        carctCont[i].style.color = 'red' // Aplica o style em todas as tags p, pois passamos o elemento i
+        carctCont[i].style.marginLeft = '15px'
+        carctCont[i].style.marginRight = '15px'
+        carctCont[i].style.textAlign = 'justify'
+    }
+    /*------*/
+
+    /*--Comandos para o document.getElementsById()--*/
+    getId.style.background = 'purple'
+    getId.style.color = '#fff'
+    var inserTit = getId.innerText + ' - Novo texto inserido pelo document.getElementsById()' //Nova variável para concatenar textos
+    getId.innerHTML = inserTit //Substituo conteúdo do HTML inserindo conteúdo da variável 
+    /*------*/
+
+
+    /*-- Comandos para o document.getElementsByName()--*/
+    for (var n = 0; n < getName.length; n++) {
+        getName[n].style.border = 'solid 1px black'
+
+        var text3 = getName[n].innerText + ' - Borda inserida pelo seletor document.getElementsByName()'
+        getName[n].innerHTML = text3
+    }
+    /*------*/
+
+    /*-- Comandos para o document.getElementsByClassName()--*/
+    /*for (m = 0; m < getClass.length; m++) {
+        getClass[m].addEventListener('click', interagir)
+        function interagir(getClass) {
+            getClass[m].style.color = 'blue'
+            getClass[m].innerHTML = 'Alteração feita pelo document.getElementsByName()'
+        }
+    }*/
+    getClass.addEventListener('click', interagir)
+
+
+    function interagir() {
+        getClass.style.color = 'blue'
+        getClass.innerHTML = 'Alteração feita pelo document.getElementsByName()'
+    }
+    /*------*/
+
+    box_2.addEventListener('mouseenter', entrar)
+    box_2.addEventListener('mouseleave', sair)
+
+    function entrar() {
+        box_2.style.background = 'lightgray';
+        box_2.style.border = '2px solid green';
+        altera_tit.style.color = 'purple';
+        altera_tit.innerHTML = 'Título alterado pelo JS com comando innerHTML';
+
+        var novo_cont = mantem_cont.innerText + '<strong><br>Conteúdo inserido pelo JS utilizando o innerText<strong>';
+        mantem_cont.innerHTML = novo_cont;
+        console.log('entrou')
+    }
+
+    function sair() {
+        box_2.style.background = 'none';
+        box_2.style.border = 'solid 1px black';
+        altera_tit.style.color = 'crimson';
+        altera_tit.innerHTML = 'Conteúdo original do HTML';
+        mantem_cont.innerHTML = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi sed aliquam molestiae consequuntur nihil nisi provident. Deserunt maiores aliquid eligendi labore error, quos nobis. Quam, labore exercitationem? Sequi, neque?'
+        
+        console.log('saiu')
+    }
 </script>
 </body>
 
