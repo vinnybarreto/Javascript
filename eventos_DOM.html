@@ -31,12 +31,13 @@
             color: red;
         }
 
-        #btn1, #btn2{
+        #btn1,
+        .btn2 {
             text-decoration: none;
             text-transform: uppercase;
             margin-left: 15px;
             padding: 8px;
-            background-color: #012E40 ;
+            background-color: #012E40;
             color: #fff;
             border-radius: 3px;
         }
@@ -69,13 +70,19 @@
                 <p>Sintaxe: variavel.addEventListener('método/evento', nomeFunção);</p>
             </li>
             <li>createElement() - Cria uma tag/elemento no doc HTML
-                <p class="createElem">Sintaxe: var variável = document.createElement('Nometag'); <a href="" id="btn1">CLIQUE AQUI</a></p>
+                <p class="createElem">Sintaxe: var variável = document.createElement('Nometag'); <a href=""
+                        id="btn1">CLIQUE AQUI</a></p>
             </li>
             <li>getAttribute() - Insere um atributo a variável criada
-                <p class="getAtrib">Sintaxe: variavel.getAttribute('atributo', 'nomeAtributo'); <a href="">PASSE O MOUSE</a></p>
+                <p class="getAtrib">Sintaxe: variavel.getAttribute('atributo', 'nomeAtributo'); <a href="">PASSE O
+                        MOUSE</a></p>
+            </li>
+            <li>removeAttribute() - Insere um atributo a variável criada
+                <p class="getAtrib">Sintaxe: variavel.removeAttribute('atributo', 'nomeAtributo'); <a href="">PASSE O
+                        MOUSE</a></p>
             </li>
             <li>setAttribute() - Insere um atributo a variável criada
-                <p>Sintaxe: variavel.setAttribute('atributo', 'nomeAtributo'); <a href="" id="btn2">PASSE O MOUSE</a></p>
+                <p>Sintaxe: variavel.setAttribute('atributo', 'nomeAtributo'); <a href="">PASSE O MOUSE</a></p>
             </li>
             <li>appendChild() - Adiciona um elemento criado ao final do documento
                 <p>Sintaxe: variavel.appendChild(elemento);</p>
@@ -86,19 +93,23 @@
         <p>Função é um conjunto de códigos que vão ser executadas SÓ QUANDO O EVENTO OCORRER, elas são executadas assim
             que as CHAMADAS ou com a decorrência de um EVENTO. Uma função pode receber PARÂMETROS e retornar um
             RESULTADO</p>
-            <ul>
-                <li>Sintaxe 1
-                    <p>function nomeAção() {</p>
-                    <p>BLOCO</p>
-                    <p>}</p>
-                </li>
-                <li>Sintaxe 2
-                    <p>function nomeAção(parâmetros) {</p>
-                    <p>BLOCO</p>
-                    <p>}</p>
-                </li>
-                <li> <p>nomeFunção(arg1, arg2) {</p>  <p>return arg1 + arg2 </p> <p>}</p> </li>
-            </ul>
+        <ul>
+            <li>Sintaxe 1
+                <p>function nomeAção() {</p>
+                <p>BLOCO</p>
+                <p>}</p>
+            </li>
+            <li>Sintaxe 2
+                <p>function nomeAção(parâmetros) {</p>
+                <p>BLOCO</p>
+                <p>}</p>
+            </li>
+            <li>
+                <p>nomeFunção(arg1, arg2) {</p>
+                <p>return arg1 + arg2 </p>
+                <p>}</p>
+            </li>
+        </ul>
         <h2>EVENTOS</h2>
         <h3>Os principais <strong>Eventos</strong> JS que utilizamos no DOM são:</h3>
         <ol>
@@ -156,7 +167,7 @@
 
         exemp.addEventListener('mousedown', insElem)
 
-        function insElem(){
+        function insElem() {
             var newTag = document.createElement('p')//Criação da Tag p
             elemPai.appendChild(newTag) // Insiro a Tag no elemento pai
             var newTxt = document.createTextNode('Novo texto inserido pelo createElement()')//Cria o texto e insere no parágrafo
@@ -171,42 +182,60 @@
 
 
         /*--Botão PASSE O MOUSE - Utilização do GetAttribute()--*/
-
+        /*
         var insAtrib = document.querySelector('.getAtrib a')
         insAtrib.addEventListener('mouseenter', insereAtb)
         insAtrib.addEventListener('mouseleave', retiraAtb)
-
+        
         function insereAtb(){
-            insAtrib.getAttribute('id')
-            insAtrib.setAttribute('id', 'btn2')
+            insAtrib.getAttribute('class')
+            insAtrib.setAttribute('class', 'btn2')
             insAtrib.innerText = 'getAttribute'
         }
 
         function retiraAtb(){
-            insAtrib.removeAttribute('id')
+            insAtrib.removeAttribute('class')
             insAtrib.innerText = 'REMOVEATTRIBUTE'
-        }
-
-        
-
-
-
-/*
-        insAtrib.addEventListener('mouseenter', altera)
-        insAtrib.addEventListener('mouseleave', retorna)
-
-        function altera(){
-            insAtrib.setAttribute('id','btn2')
-            insAtrib.innerText = 'Atributo ID inserido'
-        }
-
-        function altera(){
-            insAtrib.setAttribute('id','btn2')
-            insAtrib.innerText = 'Atributo ID inserido'
         }*/
 
+        var insAtrib = document.querySelectorAll('.getAtrib a')
+        //insAtrib.addEventListener('mouseenter', insereAtb)
+        //insAtrib.addEventListener('mouseleave', retiraAtb)
 
+        for (i = 0; i < insAtrib.length; i++) {
+            insAtrib[i].addEventListener('mouseenter', insereAtb)
+            insAtrib[i].addEventListener('mouseleave', retiraAtb)
+            function insereAtb() {
+                console.log('insere')
+            }
+            function retiraAtb() {
+                console.log('retira')
+            }
+        }
+
+
+
+
+
+
+
+
+        /*
+                insAtrib.addEventListener('mouseenter', altera)
+                insAtrib.addEventListener('mouseleave', retorna)
         
+                function altera(){
+                    insAtrib.setAttribute('id','btn2')
+                    insAtrib.innerText = 'Atributo ID inserido'
+                }
+        
+                function altera(){
+                    insAtrib.setAttribute('id','btn2')
+                    insAtrib.innerText = 'Atributo ID inserido'
+                }*/
+
+
+
 
 
         /*--Boxes de teste das funções--*/
