@@ -74,15 +74,15 @@
                         id="btn1">CLIQUE AQUI</a></p>
             </li>
             <li>getAttribute() - Insere um atributo a variável criada
-                <p class="getAtrib">Sintaxe: variavel.getAttribute('atributo', 'nomeAtributo'); <a href="">PASSE O
+                <p class="getAtrib">Sintaxe: variavel.getAttribute('atributo'); <a href="">PASSE O
                         MOUSE</a></p>
             </li>
             <li>removeAttribute() - Insere um atributo a variável criada
-                <p class="getAtrib">Sintaxe: variavel.removeAttribute('atributo', 'nomeAtributo'); <a href="">PASSE O
-                        MOUSE</a></p>
+                <p class="remAtrib">Sintaxe: variavel.removeAttribute('atributo'); <a href="" class="btn2">PASSE O
+                    MOUSE</a></p>
             </li>
             <li>setAttribute() - Insere um atributo a variável criada
-                <p>Sintaxe: variavel.setAttribute('atributo', 'nomeAtributo'); <a href="">PASSE O MOUSE</a></p>
+                <p>Sintaxe: variavel.setAttribute('atributo', 'nomeAtributo');
             </li>
             <li>appendChild() - Adiciona um elemento criado ao final do documento
                 <p>Sintaxe: variavel.appendChild(elemento);</p>
@@ -175,42 +175,50 @@
         }
         /*------*/
 
-
-
-
-
-
-
         /*--Botão PASSE O MOUSE - Utilização do GetAttribute()--*/
-        /*
+        
         var insAtrib = document.querySelector('.getAtrib a')
         insAtrib.addEventListener('mouseenter', insereAtb)
-        insAtrib.addEventListener('mouseleave', retiraAtb)
+        
         
         function insereAtb(){
             insAtrib.getAttribute('class')
             insAtrib.setAttribute('class', 'btn2')
             insAtrib.innerText = 'getAttribute'
         }
+        /*------*/
+
+        var retAtrib = document.querySelector('.remAtrib a')
+        retAtrib.addEventListener('mouseenter', retiraAtb)
 
         function retiraAtb(){
-            insAtrib.removeAttribute('class')
-            insAtrib.innerText = 'REMOVEATTRIBUTE'
-        }*/
+            retAtrib.removeAttribute('class')
+            retAtrib.innerText = 'REMOVEATTRIBUTE'
+            console.log(insAtrib)
+        }
+        
 
-        var insAtrib = document.querySelectorAll('.getAtrib a')
 
-        for (i = 0; i < insAtrib.length; i++) {
-            insAtrib[i].addEventListener('mouseenter', insereAtb)
-            insAtrib[i].addEventListener('mouseleave', retiraAtb)
+        /*
+        var selAtrib = document.querySelector('.getAtrib a')
+        for (i = 0; i < selAtrib.length; i++) {
+            selAtrib[i].addEventListener('mouseenter', insereAtb)
+            selAtrib[i].addEventListener('mouseleave', retiraAtb)
+
+            var insAtrib = selAtrib[i]
             function insereAtb() {
-                console.log('insere')
+                insAtrib.getAttribute('class')
+                insAtrib.setAttribute('class', 'btn2')
+                insAtrib.innerText = 'getAttribute'
+                console.log(selAtrib.length)
             }
             function retiraAtb() {
-                console.log('retira')
+                insAtrib.removeAttribute('class')
+                insAtrib.innerText = 'REMOVEATTRIBUTE'
+                console.log(insAtrib)
             }
-        }
-
+        }*/
+        
 
 
 
