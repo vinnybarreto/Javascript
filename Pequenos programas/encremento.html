@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="enc">Encrementa</button>
+    <button class="dec">Decrementa</button>
+    <p class="result">Resultado</p>
+</body>
+    <script>
+        var num = 0
+        var encrem = document.querySelector('.enc')
+        var decm = document.querySelector('.dec')
+        var resultado = document.querySelector('.result')
+
+        encrem.addEventListener('click', add)
+        decm.addEventListener('click', ret)
+
+        function add(){
+            num++
+            resultado.innerHTML = num
+        }
+        function ret(){
+            num--
+            resultado.innerHTML = num
+        }
+    </script>
+</html>
