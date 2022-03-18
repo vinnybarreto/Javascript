@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <button class="enc">Encrementa</button>
     <button class="dec">Decrementa</button>
     <p class="result">Resultado</p>
 </body>
-    <script>
-        var num = 0
-        var encrem = document.querySelector('.enc')
-        var decm = document.querySelector('.dec')
-        var resultado = document.querySelector('.result')
+<script>
+    var num = 0
+    var encrem = document.querySelector('.enc')
+    var decm = document.querySelector('.dec')
+    var resultado = document.querySelector('.result')
+    var teste = 1
 
-        encrem.addEventListener('click', add)
-        decm.addEventListener('click', ret)
+    encrem.addEventListener('click', add)
+    encrem.addEventListener('click', test)
+    decm.addEventListener('click', ret)
+    decm.addEventListener('click', test)
 
-        function add(){
-            num++
-            resultado.innerHTML = num
+    function add() {
+        num++
+        resultado.innerHTML = num
+    }
+    function ret() {
+        num--
+        resultado.innerHTML = num
+    }
+
+    function test() {
+
+        if (num == teste) {
+            console.log('Teste passou')
         }
-        function ret(){
-            num--
-            resultado.innerHTML = num
+        else {
+            console.log('teste falhou')
         }
+    }
+</script>
 
-    </script>
 </html>
