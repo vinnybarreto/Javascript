@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">Start count!</button>
+    <input type="text" id="display">
+    <button id="stop">Stop count!</button>
+</body>
+    <script>
+        var começa = document.querySelector('#start')
+        var display = document.querySelector('#display')
+        var para = document.querySelector('#stop')
+        var contador = null
+
+        começa.addEventListener('click', começar)
+        para.addEventListener('click', parar)
+
+        function começar(){
+            if (!contador){ //Condicional para não contador
+                contador = setInterval(function(){
+                    display.value = Number(display.value) + 1
+                },100) //setInternal(retorno,milisegundos)
+            }
+        }
+
+        function parar(){
+            clearInterval(contador) //Paragem da função SetInternal
+            contador = null //Setando a variável
+        }
+
+    </script>
+</html>

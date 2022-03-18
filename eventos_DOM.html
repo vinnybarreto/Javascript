@@ -79,7 +79,7 @@
             </li>
             <li>removeAttribute() - Insere um atributo a variável criada
                 <p class="remAtrib">Sintaxe: variavel.removeAttribute('atributo'); <a href="" class="btn2">PASSE O
-                    MOUSE</a></p>
+                        MOUSE</a></p>
             </li>
             <li>setAttribute() - Insere um atributo a variável criada
                 <p>Sintaxe: variavel.setAttribute('atributo', 'nomeAtributo');
@@ -103,13 +103,18 @@
                 <p>function nomeAção(parâmetros) {</p>
                 <p>BLOCO</p>
                 <p>}</p>
-            </li>
-            <li>
+
                 <p>nomeFunção(arg1, arg2) {</p>
                 <p>return arg1 + arg2 </p>
                 <p>}</p>
             </li>
         </ul>
+        <h3>Função pré definidas pelo JS</h3>
+        <ul>
+            <li>setInterval(callback, milesegundos) - Retorna um identificar que nos é muito útil quando queremos para a animação <a href="Pequenos programas/contador.html" target="_blank" class="btn2">EXEMPLO</a></li>
+            <li>clearInterval(identificador) - Realiza o stop na função anterior</li>
+        </ul>
+
         <h2>EVENTOS</h2>
         <h3>Os principais <strong>Eventos</strong> JS que utilizamos no DOM são:</h3>
         <ol>
@@ -142,6 +147,9 @@
             </li>
             <li>
                 select() - Evento acionado quando se seleciona um elemento
+            </li>
+            <li>
+                onchange() - Evento acionado quando algo é alterado 
             </li>
         </Ol>
     </article>
@@ -176,12 +184,12 @@
         /*------*/
 
         /*--Botão PASSE O MOUSE - Utilização do GetAttribute()--*/
-        
+
         var insAtrib = document.querySelector('.getAtrib a')
         insAtrib.addEventListener('mouseenter', insereAtb)
-        
-        
-        function insereAtb(){
+
+
+        function insereAtb() {
             insAtrib.getAttribute('class')
             insAtrib.setAttribute('class', 'btn2')
             insAtrib.innerText = 'getAttribute'
@@ -191,12 +199,12 @@
         var retAtrib = document.querySelector('.remAtrib a')
         retAtrib.addEventListener('mouseenter', retiraAtb)
 
-        function retiraAtb(){
+        function retiraAtb() {
             retAtrib.removeAttribute('class')
             retAtrib.innerText = 'REMOVEATTRIBUTE'
             console.log(insAtrib)
         }
-        
+
 
 
         /*
@@ -218,7 +226,7 @@
                 console.log(insAtrib)
             }
         }*/
-        
+
 
 
 
