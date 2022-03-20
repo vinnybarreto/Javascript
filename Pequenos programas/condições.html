@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de multas</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    <p>Velocidadade do carro <input type="number" id="veloc"> km/h <button id="verific">Verificar</button></p>
+    <div class="result"></div>
+</body>
+<script>
+    var veloc = document.querySelector('#veloc')
+    var verific = document.querySelector('#verific')
+    var result = document.querySelector('.result')
+
+    verific.addEventListener('click', consulta)
+
+    function consulta(){
+        var veloNum = Number(veloc.value)
+        result.innerHTML = `Sua velocidade atual é <strong>${veloNum}</strong> km/h!`
+        result.innerHTML += `<p>Use sempre o cinto de segurança</p>`
+        if (veloNum < 40){
+            result.innerHTML += `<p>Porém tu é lerdo hein</p>`
+        }
+        else if(veloNum <= 80){
+            result.innerHTML += `<p>Parabéns velocidade dentro dos padrões</p>`
+        }
+        else{
+            result.innerHTML += `<p><strong>MULTADO</strong> tá pensando que é o Ayrton Senna <strong>mané</strong></p>`
+        }
+
+    }
+</script>
+</html>
