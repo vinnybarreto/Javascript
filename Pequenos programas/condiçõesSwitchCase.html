@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch_Case</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px auto;
+        }
+
+        #diaSem, #resultado {
+            display: table;
+            margin: 0 auto;
+            background-color: #052e30;
+            color: #dde6d7;
+            padding: 15px;
+            text-align: center;
+        }
+
+        #resultado{
+            display: none;
+            margin-top: 30px;
+        }
+
+        #insere {
+            margin-bottom: 15px;
+        }
+
+        #dia {
+            padding: 3px;
+            margin-right: 15px;
+        }
+
+
+        #checar {
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Teste utilizando condicional Switch_Case</h1>
+    <div id="diaSem">
+        <h2 id="insere">Insira abaixo um dia da semana:</h2>
+        <input id="dia" type="text">
+        <button name="verificar" id="checar">verificar</button>
+    </div>
+    <div id="resultado"></div>
+</body>
+<script>
+    var chec = document.getElementById('checar')
+    chec.addEventListener('click', semana)
+
+    function semana(){
+        var diaSem = document.getElementById('dia').value
+        var result = document.getElementById('resultado')
+        result.style.display = 'table'
+        result.innerHTML = '<h2>[ERRO]! Insira um dia da semana válido</h2>'
+        console.log ('OK')
+    }
+</script>
+
+</html>
